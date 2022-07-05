@@ -1,0 +1,17 @@
+{% extends 'main.html' %}
+{% block content %}
+<h1> List of doctors </h1>
+    <div>
+        {% for d in doc %}
+                <div>
+                    <h4>
+                        <a href="/reservation/{{d.user.id}}">{{d.user.first_name}} {{d.user.last_name}}. Adress: {{d.location.adress}}</a>
+                        <br>
+                        </h4>
+
+                </div>
+
+        {% endfor %}
+    </div>
+
+{% endblock content %}

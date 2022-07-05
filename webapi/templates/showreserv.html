@@ -1,0 +1,22 @@
+{% extends 'main.html' %}
+{% block content %}
+<h1> List of reservations </h1>
+    <div>
+        {% for r in reservations %}
+            <div>
+                <h3>Client: {{r.client}}</h3>
+                    <h4>
+                    Type:{{r.procedure}}
+                    <br>
+                    Date: {{r.day}}
+                    <br>
+                    Time: From {{r.start_reserv}} to {{r.end_reserv}}
+
+                </h4>
+
+            </div>
+
+        {% endfor %}
+    </div>
+
+{% endblock content %}

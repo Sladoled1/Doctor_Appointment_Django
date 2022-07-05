@@ -1,0 +1,24 @@
+{% extends 'main.html' %}
+{% block content %}
+<h1> Reservation </h1>
+
+    <div>
+        {% if request.user.is_authenticated and request.user.is_customer == True %}
+                <div>
+                    <h3>Working time:</h3>
+                    <h4>From: {{doc.scheldue}}</h4>
+                        <br>
+                    <form method="POST"  action="">
+                        {% csrf_token %}
+                        {{form.as_p}}
+                        <input type="submit" value="Register" />
+                    </form>
+                </div>
+        {% else %}
+            <h3>To reservate you must login</h3>
+        {% endif %}
+    </div>
+
+
+
+{% endblock content %}

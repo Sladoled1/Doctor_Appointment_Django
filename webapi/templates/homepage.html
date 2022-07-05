@@ -1,0 +1,14 @@
+{% extends 'main.html' %}
+{% block content %}
+    {% if request.user.is_authenticated  %}
+        {% if request.user.is_customer == True and request.user.is_customer == False %}
+        <h2>Welcome,{{user.first_name}}</h2>
+        {% elif request.user.is_staff == True and request.user.is_customer == False %}
+        <h2>Welcome, doctor {{user.first_name}}</h2>
+        {% elif request.user.is_staff == True and request.user.is_customer == True %}
+        <h2>Welcome, admin</h2>
+        {% endif %}
+    {% else %}
+    <h1>Main page</h1>
+    {% endif %}
+{% endblock content%}

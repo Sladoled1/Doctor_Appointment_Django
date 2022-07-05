@@ -1,0 +1,20 @@
+{% extends 'main.html' %}
+{% block content %}
+<h1> Catalouge </h1>
+
+    <div>
+        {% for ser in serv%}
+                <div>
+                    <h4>
+                        <a href="/doctors/{{ser}}">{{ser}}</a>
+                        <br>
+                        </h4>
+
+                </div>
+
+        {% endfor %}
+    </div>
+
+
+
+{% endblock content %}
